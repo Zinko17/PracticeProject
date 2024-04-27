@@ -1,0 +1,128 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main section styles */
+main {
+    padding: 20px;
+}
+
+/* Block 1 styles */
+.block1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрируем карточки */
+    margin-bottom: 20px;
+}
+
+.big-card {
+    flex: 0 0 calc(33.33% - 20px); /* Ширина большой карточки */
+    margin: 0 10px 20px; /* Расстояние между карточками */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.big-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.small-cards {
+    flex: 0 0 calc(66.66% - 20px); /* Ширина контейнера для маленьких карточек */
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Расстояние между большой и маленькими карточками */
+}
+
+.small-card {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.small-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Block 2 styles */
+.block2 {
+    margin-bottom: 20px;
+}
+
+.service-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Block 3 styles */
+.block3 {
+    margin-bottom: 20px;
+}
+
+.banner {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.banner img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Block 4 styles */
+.block4 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.category-card {
+    flex: 0 0 calc(33.33% - 20px); /* Ширина категорийной карточки */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

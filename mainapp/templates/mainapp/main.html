@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/main.css'%}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Logo</a>
+        </div>
+        <div class="header-text">
+            <h1>Welcome to Our Service</h1>
+        </div>
+        <div class="profile-button">
+            <a href="profile.html">Profile</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="block1">
+            <div class="big-card">
+                <img src="{{ big_card_image }}" alt="Big Card Image">
+                <h2>Big Card Title</h2>
+                <p>Big Card Description</p>
+            </div>
+            <div class="small-cards">
+                <div class="small-card">
+                    <img src="{{ small_card1_image }}" alt="Small Card 1 Image">
+                    <h3>Small Card 1 Title</h3>
+                    <p>Small Card 1 Description</p>
+                </div>
+                <div class="small-card">
+                    <img src="{{ small_card2_image }}" alt="Small Card 2 Image">
+                    <h3>Small Card 2 Title</h3>
+                    <p>Small Card 2 Description</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="block2">
+            {% for service in services %}
+            <div class="service-card">
+                <h2>{{ service.name }}</h2>
+                <p>{{ service.description }}</p>
+                <p>Price: ${{ service.price }}</p>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section class="block3">
+            <div class="banner">
+                <img src="{{ banner_image }}" alt="Banner Image">
+            </div>
+        </section>
+
+        <section class="block4">
+            <div class="category-card">
+                <h2>Mobile Internet</h2>
+            </div>
+            <div class="category-card">
+                <h2>Wi-Fi</h2>
+            </div>
+            <div class="category-card">
+                <h2>Wi-Fi + TV</h2>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Our Service</p>
+    </footer>
+</body>
+</html>
