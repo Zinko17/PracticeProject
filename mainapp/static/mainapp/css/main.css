@@ -41,12 +41,14 @@ main {
 }
 
 .big-card {
-    flex: 0 0 calc(33.33% - 20px); /* Ширина большой карточки */
+    height: 260px;
+    width: 600px;
     margin: 0 10px 20px; /* Расстояние между карточками */
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .big-card img {
@@ -55,74 +57,104 @@ main {
 }
 
 .small-cards {
-    flex: 0 0 calc(66.66% - 20px); /* Ширина контейнера для маленьких карточек */
+    text-align: center;
+    width: 350px;
     display: flex;
     flex-direction: column;
     margin-left: 20px; /* Расстояние между большой и маленькими карточками */
 }
 
 .small-card {
-    margin-top: 20px;
     padding: 20px;
+    margin-bottom: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 120px;
 }
 
 .small-card img {
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 /* Block 2 styles */
 .block2 {
     margin-bottom: 20px;
+
+}
+.h2service {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
 }
 
 .service-card {
-    margin-bottom: 20px;
+    height: 280px;
+    width: 200px;
     padding: 20px;
+    margin-bottom: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.service-card h2 {
+    margin-bottom: 10px;
+}
+
+.service-card p  {
+    margin-bottom: 15px;
 }
 
 /* Block 3 styles */
 .block3 {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .banner {
+    height: 100px;
+    width: 1000px;
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .banner img {
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 /* Block 4 styles */
 .block4 {
     display: flex;
-    justify-content: space-between;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.h2block4 {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .category-card {
-    flex: 0 0 calc(33.33% - 20px); /* Ширина категорийной карточки */
+    text-align: center;
+    width: 200px;
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
 }
 
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
+

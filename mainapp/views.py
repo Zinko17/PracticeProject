@@ -4,5 +4,5 @@ from .models import Service
 # Create your views here.
 
 def main(request):
-    service = Service.objects.all()
-    return render(request, 'mainapp/main.html', {'service': service})
+    services = Service.objects.all()
+    return render(request, 'mainapp/main.html', {'services': services})

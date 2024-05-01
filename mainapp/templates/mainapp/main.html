@@ -42,13 +42,16 @@
         </section>
 
         <section class="block2">
+            <h2 class="h2service">Популярные тарифы</h2>
             {% for service in services %}
-            <div class="service-card">
-                <h2>{{ service.name }}</h2>
-                <p>{{ service.description }}</p>
-                <p>Price: ${{ service.price }}</p>
+            <div class="service-cards">
+                <div class="service-card">
+                    <h2>{{ service.name }}</h2>
+                    <p>{{ service.description|linebreaks }}</p>
+                    <p>Цена: {{ service.price }} сом</p>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </section>
 
         <section class="block3">
@@ -57,7 +60,9 @@
             </div>
         </section>
 
+        <h2 class="h2block4">Категории услуг</h2>
         <section class="block4">
+
             <div class="category-card">
                 <h2>Mobile Internet</h2>
             </div>
@@ -70,8 +75,6 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Our Service</p>
-    </footer>
+
 </body>
 </html>
