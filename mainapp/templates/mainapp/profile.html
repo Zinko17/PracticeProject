@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/profile.css' %}">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <li><a href="/" class="home-btn">Главная</a></li>
+    </div>
+    <div class="header-text">
+        <h1>Добро пожаловать в ваш профиль</h1>
+    </div>
+    <div class="logout-button">
+        <li><a href="{% url 'logout' %}?next=/profile/">Выход</a></li>
+    </div>
+</header>
+
+<main>
+    <!-- Карточка профиля -->
+    <section class="profile-card">
+        <div class="profile-details">
+            <h2>{{ userprofile.user.username }}</h2>
+            {% if userprofile.user.email %}
+            <p>Email: {{ userprofile.user.email }}</p>
+            {% endif %}
+            {% if userprofile.phone_number %}
+            <p>Номер телефона: {{ userprofile.phone_number }}</p>
+            {% endif %}
+            {% if userprofile.address %}
+            <p>Адрес: {{ userprofile.address }}</p>
+            {% endif %}
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

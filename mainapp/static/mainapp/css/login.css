@@ -1,0 +1,80 @@
+/* Стили для body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex; /* Добавляем flex контейнер */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    height: 100vh; /* Делаем контейнер высотой по всему экрану */
+}
+
+/* Стили для контейнера логина */
+.login-container {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовка */
+h2 {
+    text-align: center;
+}
+
+/* Стили для формы */
+form {
+    margin-top: 20px;
+}
+
+/* Стили для текстовых полей */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Стили для кнопки */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Стили для кнопки при наведении */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Стили для кнопки "На главную" */
+a.home-btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

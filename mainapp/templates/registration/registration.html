@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/register.css' %}">
+</head>
+<body>
+<header>
+</header>
+
+<main class="register-container">
+    <h2>Регистрация</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <div class="links">
+        <a href="{% url 'login' %}">Вход</a>
+        <a href="/">На главную</a>
+    </div>
+</main>
+
+</body>
+</html>

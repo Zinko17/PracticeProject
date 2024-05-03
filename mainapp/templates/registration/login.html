@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логин</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/login.css' %}">
+</head>
+<body>
+<header>
+</header>
+
+<main class="login-container">
+    <h2>Вход</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Войти</button>
+    </form>
+    <div class="links">
+        <a href="{% url 'register' %}">Регистрация</a>
+        <a href="/">На главную</a>
+    </div>
+</main>
+
+
+
+</body>
+</html>
