@@ -95,22 +95,52 @@ main {
 }
 
 .service-card {
-    height: 280px;
-    width: 200px;
+    height: 240px;
+    width: 215px;
     padding: 20px;
     margin-bottom: 20px;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
+    text-align: center;
+    position: relative;
 }
 
 .service-card h2 {
     margin-bottom: 10px;
+    font-size: 24px;
 }
 
-.service-card p  {
-    margin-bottom: 15px;
+.details-link {
+  text-decoration: none; /* Удалить подчеркивание */
+  color: inherit; /* Использовать цвет текста по умолчанию */
+}
+
+.price {
+    position: absolute;
+    top: 50%; /* Располагаем верхний край дива в центре по вертикали */
+    left: 50%; /* Располагаем левый край дива в центре по горизонтали */
+    transform: translate(-50%, -50%);
+
+}
+
+.details-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #007bff; /* Синий цвет */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #0056b3; /* Темнотинко-синий при наведении */
 }
 
 /* Block 3 styles */
@@ -156,5 +186,7 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 0 10px;
 }
+
+
 
 

@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ service.name }} - Подробности</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/profile.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">Logo</a>
+        </div>
+        <div class="header-text">
+            <h1>Welcome to Our Service</h1>
+        </div>
+        <div class="profile-button">
+            <li><a href="/profile/">Профиль</a></li>
+        </div>
+    </header>
+
+<main>
+    <!-- Карточка услуги -->
+    <section class="service-card">
+        <h2>{{ service.name }}</h2>
+        <p>{{ service.description }}</p>
+        <p>Цена: {{ service.price }} сом</p>
+        {% if service.category == 'mobile_internet' %}
+            <!-- Выводим код для активации услуги мобильного интернета -->
+            <p>Введите следующий код для активации услуги: XXXXXXX</p>
+        {% elif user.is_authenticated %}
+            <!-- Выводим кнопку для добавления заявки на услугу -->
+            <form action="{% url 'add_request' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="service_id" value="{{ service.id }}">
+                <button type="submit">Добавить в профиль</button>
+            </form>
+        {% endif %}
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Веб-сайт отзывов об играх. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

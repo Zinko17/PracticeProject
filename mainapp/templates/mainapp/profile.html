@@ -26,15 +26,30 @@
         <div class="profile-details">
             <h2>{{ userprofile.user.username }}</h2>
             {% if userprofile.user.email %}
-            <p>Email: {{ userprofile.user.email }}</p>
+                <p>Email: {{ userprofile.user.email }}</p>
             {% endif %}
             {% if userprofile.phone_number %}
-            <p>Номер телефона: {{ userprofile.phone_number }}</p>
+                <p>Номер телефона: {{ userprofile.phone_number }}</p>
             {% endif %}
             {% if userprofile.address %}
-            <p>Адрес: {{ userprofile.address }}</p>
+                <p>Адрес: {{ userprofile.address }}</p>
             {% endif %}
         </div>
+    </section>
+
+    <!-- Заявки на услуги -->
+    <section class="service-requests">
+        <h2>Заявки на услуги</h2>
+        {% if service_requests %}
+            <ul>
+                {% for request in service_requests %}
+                    <li>{{ request.name }}</li>
+                    <!-- Другие данные заявки -->
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>У вас пока нет заявок на услуги.</p>
+        {% endif %}
     </section>
 </main>
 

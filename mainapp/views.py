@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Service, UserProfile
 from .forms import UserProfileForm, UserForm, RegistrationForm
 
@@ -12,7 +12,8 @@ def main(request):
 @login_required
 def profile_view(request):
     user_profile = UserProfile.objects.get(user=request.user)
-    return render(request, 'mainapp/profile.html', {'userprofile': user_profile})
+    service_requests = user_profile.services.all()  # Получаем все заявки пользователя
+    return render(request, 'mainapp/profile.html', {'userprofile': user_profile, 'service_requests': service_requests})
 
 from django.contrib.auth.models import User
 from .forms import UserProfileForm, UserForm, RegistrationForm
@@ -36,3 +37,26 @@ def register_view(request):
         user_form = UserForm()
         profile_form = UserProfileForm()
     return render(request, 'registration/registration.html', {'user_form': user_form, 'profile_form': profile_form})
+
+
+def service_detail(request, service_id):
+    # Получаем объект Service по его идентификатору или возвращаем 404, если он не существует
+    service = get_object_or_404(Service, pk=service_id)
+    return render(request, 'mainapp/service_detail.html', {'service': service})
+
+
+@login_required
+def add_request(request):
+    if request.method == 'POST':
+        service_id = request.POST.get('service_id')
+        service = Service.objects.get(pk=service_id)
+        user_profile = request.user.userprofile
+        user_profile.services.add(service)
+
+        # Устанавливаем флаг в сессии, чтобы сообщить шаблону об успешном добавлении
+        request.session['service_added'] = True
+
+        # Перенаправляем на страницу, чтобы избежать повторной отправки формы
+        return redirect('service_detail', service_id=service_id)
+    else:
+        return redirect('main')

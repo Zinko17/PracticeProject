@@ -53,3 +53,31 @@ header h1 {
 .profile-details p {
     margin: 5px 0;
 }
+
+.service-requests h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center; /* Добавляем центрирование текста */
+}
+
+.service-requests p {
+    text-align: center; /* Добавляем центрирование текста */
+}
+
+.service-requests ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Добавляем центрирование текста */
+}
+
+.service-requests li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    text-align: center; /* Добавляем центрирование текста */
+}
+
+.service-requests li:last-child {
+    border-bottom: none;
+}

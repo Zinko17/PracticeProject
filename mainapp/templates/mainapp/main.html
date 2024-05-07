@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html">Logo</a>
+            <a href="/">Logo</a>
         </div>
         <div class="header-text">
             <h1>Welcome to Our Service</h1>
@@ -47,8 +47,10 @@
             <div class="service-cards">
                 <div class="service-card">
                     <h2>{{ service.name }}</h2>
-                    <p>{{ service.description|linebreaks }}</p>
-                    <p>Цена: {{ service.price }} сом</p>
+                    <div class="price">
+                        <p>Цена: {{ service.price }} сом</p>
+                    </div>
+                    <button class="details-button"><a href="{% url 'service_detail' service.id %}">Подробнее</a></button>
                 </div>
                 {% endfor %}
             </div>
