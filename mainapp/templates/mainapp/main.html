@@ -10,10 +10,12 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/">Logo</a>
+            <a href="/">
+                <img src="{% static 'mainapp/img/logo.png' %}" alt="Logo" width="40" height="40">
+            </a>
         </div>
         <div class="header-text">
-            <h1>Welcome to Our Service</h1>
+            <h2>Welcome to Our Service</h2>
         </div>
         <div class="profile-button">
             <li><a href="/profile/">Профиль</a></li>
@@ -23,20 +25,18 @@
     <main>
         <section class="block1">
             <div class="big-card">
-                <img src="{{ big_card_image }}" alt="Big Card Image">
-                <h2>Big Card Title</h2>
-                <p>Big Card Description</p>
+                <img src="{% static 'mainapp/img/big_card1.jpg' %}" alt="Big Card Image">
+                <div class="overlay-text">
+                <h2>БОЛЕЕ 10 ВЫГОДНЫХ ТАРИФОВ ДЛЯ ТВОЕГО СМАРТФОНА!!!</h2>
+                <p>НАЙДИ СВОЙ</p>
+            </div>
             </div>
             <div class="small-cards">
-                <div class="small-card">
-                    <img src="{{ small_card1_image }}" alt="Small Card 1 Image">
-                    <h3>Small Card 1 Title</h3>
-                    <p>Small Card 1 Description</p>
+                <div class="small-card1">
+                    <img src="{% static 'mainapp/img/smol_card1.jpg' %}" alt="Small Card 1 Image">
                 </div>
-                <div class="small-card">
-                    <img src="{{ small_card2_image }}" alt="Small Card 2 Image">
-                    <h3>Small Card 2 Title</h3>
-                    <p>Small Card 2 Description</p>
+                <div class="small-card2">
+                    <img src="{% static 'mainapp/img/smol_card2.jpg' %}" alt="Small Card 2 Image">
                 </div>
             </div>
         </section>
@@ -46,11 +46,14 @@
             {% for service in services %}
             <div class="service-cards">
                 <div class="service-card">
-                    <h2>{{ service.name }}</h2>
+                    <div class="service-name">
+                        <p>{{ service.name }}</p>
+                    </div>
                     <div class="price">
                         <p>Цена: {{ service.price }} сом</p>
                     </div>
-                    <button class="details-button"><a href="{% url 'service_detail' service.id %}">Подробнее</a></button>
+                    <button class="details-button" onclick="window.location.href='{% url 'service_detail' service.id %}'">Подробнее</button>
+
                 </div>
                 {% endfor %}
             </div>

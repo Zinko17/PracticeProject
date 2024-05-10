@@ -8,13 +8,14 @@
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #E4E5EA;
     color: #333;
 }
 
+
 /* Header styles */
 header {
-    background-color: #333;
+    background-color: #16354d;
     color: #fff;
     padding: 10px;
     display: flex;
@@ -49,12 +50,29 @@ main {
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative; /* Добавим относительное позиционирование */
+    overflow: hidden; /* Скрытие избыточного контента */
 }
 
 .big-card img {
-    max-width: 100%;
-    border-radius: 8px;
+    width: 100%; /* Сделать изображение шириной 100% относительно родительского элемента */
+    height: 100%; /* Сделать изображение высотой 100% относительно родительского элемента */
+    border-radius: 20px; /* Применение скругленных углов к изображению */
+    object-fit: cover; /* Растягивание изображения, чтобы оно заполняло всю область без искажения */
+    position: absolute; /* Абсолютное позиционирование внутри родительского элемента */
+    top: 0; /* Поместить изображение вверху карточки */
+    left: 0; /* Поместить изображение слева карточки */
 }
+
+.overlay-text {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Прикрепляем текст к верхней границе карточки */
+    left: 0; /* Прикрепляем текст к левой границе карточки */
+    padding: 20px; /* Отступы для текста */
+    color: white; /* Цвет текста */
+    font-size: 24px; /* Размер шрифта */
+}
+
 
 .small-cards {
     text-align: center;
@@ -64,19 +82,46 @@ main {
     margin-left: 20px; /* Расстояние между большой и маленькими карточками */
 }
 
-.small-card {
+.small-card1 {
+    position: relative; /* Установка позиции относительно родительского элемента */
     padding: 20px;
     margin-bottom: 20px;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 120px;
+    overflow: hidden; /* Скрытие содержимого, выходящего за границы контейнера */
 }
 
-.small-card img {
-    max-width: 100%;
+.small-card2 {
+    position: relative; /* Установка позиции относительно родительского элемента */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
     border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 120px;
+    overflow: hidden; /* Скрытие содержимого, выходящего за границы контейнера */
 }
+
+.small-card1 img {
+    position: absolute; /* Установка позиции абсолютно внутри .small-card */
+    top: 0; /* Размещение изображения в верхнем левом углу .small-card */
+    left: 0;
+    width: 100%; /* Сделать изображение шириной 100% относительно .small-card */
+    height: auto; /* Автоматическое определение высоты для сохранения пропорций */
+    border-radius: 20px; /* Применение скругленных углов к изображению */
+}
+
+.small-card2 img {
+    position: absolute; /* Установка позиции абсолютно внутри .small-card */
+    top: 0; /* Размещение изображения в верхнем левом углу .small-card */
+    left: 0;
+    width: 100%; /* Сделать изображение шириной 100% относительно .small-card */
+    height: auto; /* Автоматическое определение высоты для сохранения пропорций */
+    border-radius: 20px; /* Применение скругленных углов к изображению */
+}
+
 
 /* Block 2 styles */
 .block2 {
@@ -112,10 +157,6 @@ main {
     font-size: 24px;
 }
 
-.details-link {
-  text-decoration: none; /* Удалить подчеркивание */
-  color: inherit; /* Использовать цвет текста по умолчанию */
-}
 
 .price {
     position: absolute;
@@ -131,16 +172,30 @@ main {
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 20px;
-    background-color: #007bff; /* Синий цвет */
+    background-color: #16354d;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 80%
 }
 
 .details-button:hover {
     background-color: #0056b3; /* Темнотинко-синий при наведении */
+}
+
+.service-name {
+    background-color: #6b99c3;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
 /* Block 3 styles */
