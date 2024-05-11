@@ -9,16 +9,26 @@
 </head>
 <body>
 <header>
-    <div class="logo">
-        <li><a href="/" class="home-btn">Главная</a></li>
+        <div class="logo">
+            <a href="/">
+                <img src="{% static 'mainapp/img/logo.png' %}" alt="Logo" width="40" height="40">
+            </a>
+        </div>
+        <div class="buttons">
+            <button class="mobile_internet-button">МОБИЛЬНЫЙ ИНТЕРНЕТ</button>
+            <button class="WIFI-button">WiFi</button>
+            <button class="WIFI+TV-button">WiFi+TV</button>
     </div>
-    <div class="header-text">
-        <h1>Добро пожаловать в ваш профиль</h1>
+    <div class="profile-button">
+        <button class="profile-button" onclick="window.location.href='{% url 'logout' %}?next=/profile/'">
+            <span>Выход</span>
+        </button>
     </div>
-    <div class="logout-button">
-        <li><a href="{% url 'logout' %}?next=/profile/">Выход</a></li>
+
+    </header>
+    <div class = "slogan">
+        Мы - СКОРОСТЬ! (кчау)
     </div>
-</header>
 
 <main>
     <!-- Карточка профиля -->

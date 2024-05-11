@@ -14,53 +14,82 @@
                 <img src="{% static 'mainapp/img/logo.png' %}" alt="Logo" width="40" height="40">
             </a>
         </div>
-        <div class="header-text">
-            <h2>Welcome to Our Service</h2>
-        </div>
-        <div class="profile-button">
-            <li><a href="/profile/">Профиль</a></li>
-        </div>
+        <div class="buttons">
+            <button class="mobile_internet-button">МОБИЛЬНЫЙ ИНТЕРНЕТ</button>
+            <button class="WIFI-button">WiFi</button>
+            <button class="WIFI+TV-button">WiFi+TV</button>
+    </div>
+    <div class="profile-button">
+        <button class="profile-button" onclick="window.location.href='/profile/'" >
+            <img src="{% static 'mainapp/img/icon-profile.png' %}" alt="Иконка профиля">
+            <span>Личный кабинет</span>
+        </button>
+    </div>
     </header>
+    <div class = "slogan">
+        Мы - СКОРОСТЬ! (кчау)
+    </div>
 
     <main>
+
         <section class="block1">
-            <div class="big-card">
-                <img src="{% static 'mainapp/img/big_card1.jpg' %}" alt="Big Card Image">
-                <div class="overlay-text">
-                <h2>БОЛЕЕ 10 ВЫГОДНЫХ ТАРИФОВ ДЛЯ ТВОЕГО СМАРТФОНА!!!</h2>
-                <p>НАЙДИ СВОЙ</p>
-            </div>
-            </div>
-            <div class="small-cards">
-                <div class="small-card1">
-                    <img src="{% static 'mainapp/img/smol_card1.jpg' %}" alt="Small Card 1 Image">
-                </div>
-                <div class="small-card2">
-                    <img src="{% static 'mainapp/img/smol_card2.jpg' %}" alt="Small Card 2 Image">
+            <div class="banner-container">
+                <div class="banner">
+                    <img src="{% static 'mainapp/img/banerPic1.png' %}" alt="Image 1">
+                    <img src="{% static 'mainapp/img/banerPic2.png' %}" alt="Image 2">
+                    <img src="{% static 'mainapp/img/banerPic3.png' %}" alt="Image 3">
+                    <img src="{% static 'mainapp/img/banerPic1.png' %}" alt="Image 1">
+                    <img src="{% static 'mainapp/img/banerPic2.png' %}" alt="Image 2">
+                    <img src="{% static 'mainapp/img/banerPic3.png' %}" alt="Image 3">
                 </div>
             </div>
+            <script>
+                let banner = document.querySelector('.banner');
+                let images = document.querySelectorAll('.banner img');
+
+                let currentPosition = 0;
+                let speed = 1; // Скорость прокрутки
+
+                function scrollImages() {
+                    currentPosition -= speed;
+                    if (currentPosition <= -310) {
+                        currentPosition = 0;
+                        banner.style.transition = 'none'; // Убираем переход для мгновенной смены позиции
+                    } else {
+                        banner.style.transition = 'transform 1s linear'; // Восстанавливаем переход
+                    }
+                    banner.style.transform = `translateX(${currentPosition}px)`;
+                }
+
+                setInterval(scrollImages, 50); // Изменение позиции каждые 50 миллисекунд
+            </script>
+
+
+
         </section>
 
         <section class="block2">
             <h2 class="h2service">Популярные тарифы</h2>
             {% for service in services %}
-            <div class="service-cards">
-                <div class="service-card">
-                    <div class="service-name">
-                        <p>{{ service.name }}</p>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="service-name">
+                            <p>{{ service.name }}</p>
+                        </div>
+                        <div class="service-description">
+                            <p>{{ service.description |linebreaks }}</p>
+                        </div>
+                        <div class="price">
+                            <p>Цена: {{ service.price }} сом</p>
+                        </div>
+                        <button class="details-button" onclick="window.location.href='{% url 'service_detail' service.id %}'">Подробнее</button>
                     </div>
-                    <div class="price">
-                        <p>Цена: {{ service.price }} сом</p>
-                    </div>
-                    <button class="details-button" onclick="window.location.href='{% url 'service_detail' service.id %}'">Подробнее</button>
-
+            {% endfor %}
                 </div>
-                {% endfor %}
-            </div>
         </section>
 
         <section class="block3">
-            <div class="banner">
+            <div class="banner2">
                 <img src="{{ banner_image }}" alt="Banner Image">
             </div>
         </section>

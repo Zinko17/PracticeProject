@@ -28,6 +28,65 @@ header {
     text-decoration: none;
 }
 
+.buttons button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 200px;
+}
+.buttons button:last-child {
+    margin-right: 0;
+}
+.buttons button:hover {
+    text-decoration: underline;
+}
+
+
+.profile-button button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items:center;
+}
+
+.profile-button  {
+    text-decoration: none;
+    color:FFFFFF;
+}
+
+.profile-button:hover{
+    text-decoration: underline;
+}
+
+.profile-button span {
+    margin-left: 10px;
+}
+
+
+.profile-button button img {
+    margin-right: 5px;
+}
+
+.slogan{
+    width: auto;
+    height: 39;
+    background-color: #6B99C3;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50;
+}
+
+
 /* Main section styles */
 main {
     padding: 20px;
@@ -37,89 +96,36 @@ main {
 .block1 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Центрируем карточки */
+    justify-content: center;
     margin-bottom: 20px;
+
 }
 
-.big-card {
-    height: 260px;
-    width: 600px;
-    margin: 0 10px 20px; /* Расстояние между карточками */
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative; /* Добавим относительное позиционирование */
-    overflow: hidden; /* Скрытие избыточного контента */
+.banner-container {
+    width: 800px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 50px;
+    margin-right: 65px;
 }
 
-.big-card img {
-    width: 100%; /* Сделать изображение шириной 100% относительно родительского элемента */
-    height: 100%; /* Сделать изображение высотой 100% относительно родительского элемента */
-    border-radius: 20px; /* Применение скругленных углов к изображению */
-    object-fit: cover; /* Растягивание изображения, чтобы оно заполняло всю область без искажения */
-    position: absolute; /* Абсолютное позиционирование внутри родительского элемента */
-    top: 0; /* Поместить изображение вверху карточки */
-    left: 0; /* Поместить изображение слева карточки */
-}
-
-.overlay-text {
-    position: absolute; /* Абсолютное позиционирование */
-    top: 0; /* Прикрепляем текст к верхней границе карточки */
-    left: 0; /* Прикрепляем текст к левой границе карточки */
-    padding: 20px; /* Отступы для текста */
-    color: white; /* Цвет текста */
-    font-size: 24px; /* Размер шрифта */
-}
-
-
-.small-cards {
-    text-align: center;
-    width: 350px;
+.banner {
     display: flex;
-    flex-direction: column;
-    margin-left: 20px; /* Расстояние между большой и маленькими карточками */
+    animation: scrollImages 10s linear infinite;
 }
 
-.small-card1 {
-    position: relative; /* Установка позиции относительно родительского элемента */
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 120px;
-    overflow: hidden; /* Скрытие содержимого, выходящего за границы контейнера */
+.banner img {
+    width:800px;
+    height: 300px;
+    align-items: center;
+    margin-right: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-.small-card2 {
-    position: relative; /* Установка позиции относительно родительского элемента */
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 120px;
-    overflow: hidden; /* Скрытие содержимого, выходящего за границы контейнера */
-}
-
-.small-card1 img {
-    position: absolute; /* Установка позиции абсолютно внутри .small-card */
-    top: 0; /* Размещение изображения в верхнем левом углу .small-card */
-    left: 0;
-    width: 100%; /* Сделать изображение шириной 100% относительно .small-card */
-    height: auto; /* Автоматическое определение высоты для сохранения пропорций */
-    border-radius: 20px; /* Применение скругленных углов к изображению */
-}
-
-.small-card2 img {
-    position: absolute; /* Установка позиции абсолютно внутри .small-card */
-    top: 0; /* Размещение изображения в верхнем левом углу .small-card */
-    left: 0;
-    width: 100%; /* Сделать изображение шириной 100% относительно .small-card */
-    height: auto; /* Автоматическое определение высоты для сохранения пропорций */
-    border-radius: 20px; /* Применение скругленных углов к изображению */
+@keyframes scrollImages {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-620px); }
 }
 
 
@@ -140,7 +146,7 @@ main {
 }
 
 .service-card {
-    height: 240px;
+    height: 280px;
     width: 215px;
     padding: 20px;
     margin-bottom: 20px;
@@ -158,13 +164,27 @@ main {
 }
 
 
-.price {
-    position: absolute;
-    top: 50%; /* Располагаем верхний край дива в центре по вертикали */
-    left: 50%; /* Располагаем левый край дива в центре по горизонтали */
-    transform: translate(-50%, -50%);
-
+.service-description {
+    font-size: 16px;
+    color: #0C151C;
+    line-height: 1.5; /* Уменьшим межстрочный интервал */
+    padding: 10px;
+    margin-top: 40px; /* Отступ от верхнего края карточки */
 }
+
+.price {
+    font-weight: bold;
+    position: absolute;
+    bottom: 60px; /* Расположим цену выше кнопки */
+    left: 0;
+    width: 100%;
+}
+
+.info p {
+    margin: 0;
+    padding: 5px 0;
+}
+
 
 .details-button {
     position: absolute;
@@ -205,7 +225,7 @@ main {
     margin-bottom: 20px;
 }
 
-.banner {
+.banner2 {
     height: 100px;
     width: 1000px;
     padding: 20px;

@@ -6,30 +6,79 @@ body {
     padding: 0;
 }
 
+/* Header styles */
 header {
-    background-color: #f0f0f0;
-    padding: 10px 20px;
+    background-color: #16354d;
+    color: #fff;
+    padding: 10px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
-.logo {
-    margin-left: 20px;
+.logo a {
+    color: #fff;
+    text-decoration: none;
 }
 
-.logout-button {
-    margin-right: 20px;
+.buttons button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 200px;
+}
+.buttons button:last-child {
+    margin-right: 0;
+}
+.buttons button:hover {
+    text-decoration: underline;
 }
 
-.logout-button a {
-    color: red;
+
+.profile-button button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items:center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
+.profile-button  {
+    text-decoration: none;
+    color:FFFFFF;
 }
+
+.profile-button:hover{
+    text-decoration: underline;
+}
+
+.profile-button span {
+    margin-left: 10px;
+}
+
+
+.profile-button button img {
+    margin-right: 5px;
+}
+
+.slogan{
+    width: auto;
+    height: 39;
+    background-color: #6B99C3;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50;
+}
+
 
 /* Стили карточки профиля */
 
