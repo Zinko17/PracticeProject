@@ -12,5 +12,8 @@ urlpatterns = [
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('service/<int:service_id>/', views.service_detail, name='service_detail'),
     path('add_request/', views.add_request, name='add_request'),
+    path('mobile_internet/', views.mobile_internet, name='mobile_internet'),
+    path('wifi/', views.wifi, name='wifi'),
+    path('wifi_tv/', views.wifi_tv, name='wifi_tv'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
