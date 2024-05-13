@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль</title>
     <link rel="stylesheet" href="{% static 'mainapp/css/profile.css' %}">
+    <script src="{% static 'mainapp/js/profile.js' %}"></script>
 </head>
 <body>
 <header>
@@ -33,30 +34,46 @@
 <main>
     <!-- Карточка профиля -->
     <section class="profile-card">
+        <div class="hello-user">
+            <h3>Здравствуйте,  </h3>
+            <h1 >{{ userprofile.user.username }}</h1>
+        </div>
         <div class="profile-details">
-            <h2>{{ userprofile.user.username }}</h2>
             {% if userprofile.user.email %}
-                <p>Email: {{ userprofile.user.email }}</p>
+                <p>Email</p>
+                <span>{{ userprofile.user.email }}</span>
             {% endif %}
             {% if userprofile.phone_number %}
-                <p>Номер телефона: {{ userprofile.phone_number }}</p>
+                <p>Номер телефона </p>
+                <span>{{ userprofile.phone_number }}</span>
             {% endif %}
             {% if userprofile.address %}
-                <p>Адрес: {{ userprofile.address }}</p>
+                <p>Адрес </p>
+                <span>{{ userprofile.address }}</span>
             {% endif %}
         </div>
     </section>
 
     <!-- Заявки на услуги -->
     <section class="service-requests">
-        <h2>Заявки на услуги</h2>
+        <h2 class="h2service">Заявки на услуги</h2>
         {% if service_requests %}
-            <ul>
                 {% for request in service_requests %}
-                    <li>{{ request.name }}</li>
-                    <!-- Другие данные заявки -->
+                <div class="request-cards">
+                    <div class="request-card">
+                        <div class="request-name">
+                            <p>{{ request.name }}</p>
+                        </div>
+                        <div class="request-description">
+                            <p>{{ request.description |linebreaks }}</p>
+                        </div>
+                        <div class="price">
+                            <p>Цена: {{ request.price }} сом</p>
+                        </div>
+                    </div>
+
                 {% endfor %}
-            </ul>
+                </div>
         {% else %}
             <p>У вас пока нет заявок на услуги.</p>
         {% endif %}

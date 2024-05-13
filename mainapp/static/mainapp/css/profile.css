@@ -1,9 +1,16 @@
 /* Общие стили */
 
-body {
-    font-family: Arial, sans-serif;
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E4E5EA;
+    color: #333;
 }
 
 /* Header styles */
@@ -85,25 +92,116 @@ header {
 .profile-card {
     margin: 20px auto;
     max-width: 600px;
+    height: 200px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    box-shadow: 0 0px 16px rgba(0, 0, 0, 0.25);
+
+}
+
+.hello-user{
+    background-color: #16354D;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.hello-user h1, h3{
+    color:#fff;
+    margin-left:10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .profile-details {
-    padding: 20px;
-}
+    padding-left: 20px;
 
-.profile-details h2 {
-    margin-top: 0;
 }
 
 .profile-details p {
-    margin: 5px 0;
+    color: #717171;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.profile-details span{
+    color: #0C151C;
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
-.service-requests h2 {
+
+/* Стили карточек заявок на услуги */
+.service-requests {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+    margin-bottom: 20px;
+}
+
+.request-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; /* Ширина контейнера заявок на услуги */
+}
+
+
+.request-card {
+    height: 280px;
+    width: 215px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.request-card h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.request-description {
+    font-size: 16px;
+    color: #0C151C;
+    line-height: 1.5; /* Уменьшим межстрочный интервал */
+    padding: 10px;
+    margin-top: 40px; /* Отступ от верхнего края карточки */
+}
+
+.price {
+    font-weight: bold;
+    position: absolute;
+    bottom: 60px; /* Расположим цену выше кнопки */
+    left: 0;
+    width: 100%;
+}
+
+
+
+
+.request-name {
+    background-color: #6b99c3;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+
+
+.h2service {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 10px;

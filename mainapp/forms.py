@@ -1,5 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.http import JsonResponse
+
 from .models import UserProfile
 
 class UserForm(forms.ModelForm):
@@ -17,3 +19,4 @@ class UserProfileForm(forms.ModelForm):
 class RegistrationForm(forms.Form):
     user_form = UserForm()
     profile_form = UserProfileForm()
+
