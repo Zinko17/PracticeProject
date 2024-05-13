@@ -60,3 +60,16 @@ def add_request(request):
         return redirect('service_detail', service_id=service_id)
     else:
         return redirect('main')
+
+
+def mobile_internet(request):
+    services = Service.objects.filter(category='mobile_internet')
+    return render(request, 'mainapp/mobile_internet.html', {'services': services})
+
+def wifi(request):
+    services = Service.objects.filter(category='wifi')
+    return render(request, 'mainapp/wifi.html', {'services': services})
+
+def wifi_tv(request):
+    services = Service.objects.filter(category='wifi_tv')
+    return render(request, 'mainapp/wifi_tv.html', {'services': services})
