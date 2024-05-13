@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIFI page</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/category.css'%}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="{% static 'mainapp/img/logo.png' %}" alt="Logo" width="40" height="40">
+            </a>
+        </div>
+        <div class="buttons">
+            <button class="mobile_internet-button" onclick="redirectToCategory('mobile_internet')">МОБИЛЬНЫЙ ИНТЕРНЕТ</button>
+            <button class="WIFI-button" onclick="redirectToCategory('wifi')">WiFi</button>
+            <button class="WIFI+TV-button" onclick="redirectToCategory('wifi_tv')">WiFi+TV</button>
+    </div>
+    <div class="profile-button">
+        <button class="profile-button" onclick="window.location.href='/profile/'" >
+            <img src="{% static 'mainapp/img/icon-profile.png' %}" alt="Иконка профиля">
+            <span>Личный кабинет</span>
+        </button>
+    </div>
+    </header>
+    <div class = "slogan">
+        Мы - СКОРОСТЬ! (кчау)
+    </div>
+
+    <script>
+    function redirectToCategory(category) {
+        var url;
+            // Определяем URL в зависимости от выбранной категории
+            if (category === 'mobile_internet') {
+                url = '{% url 'mobile_internet' %}';
+            } else if (category === 'wifi') {
+                url = '{% url 'wifi' %}';
+            } else if (category === 'wifi_tv') {
+                url = '{% url 'wifi_tv' %}';
+            }
+
+            // Перенаправляем на соответствующую страницу
+            window.location.href = url;
+        }
+    </script>
+<section class="block2">
+            <h2 class="h2service">Тарифы категории WIFI</h2>
+            {% for service in services %}
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="service-name">
+                            <p>{{ service.name }}</p>
+                        </div>
+                        <div class="service-description">
+                            <p>{{ service.description |linebreaks }}</p>
+                        </div>
+                        <div class="price">
+                            <p>Цена: {{ service.price }} сом</p>
+                        </div>
+                        <button class="details-button" onclick="window.location.href='{% url 'service_detail' service.id %}'">Подробнее</button>
+                    </div>
+            {% endfor %}
+                </div>
+        </section>
+
+</body>
+</html>
