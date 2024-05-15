@@ -59,28 +59,15 @@
                     <img src="{% static 'mainapp/img/banerPic1.png' %}" alt="Image 1">
                     <img src="{% static 'mainapp/img/banerPic2.png' %}" alt="Image 2">
                     <img src="{% static 'mainapp/img/banerPic3.png' %}" alt="Image 3">
+                    <img src="{% static 'mainapp/img/banerPic1.png' %}" alt="Image 1">
+                    <img src="{% static 'mainapp/img/banerPic2.png' %}" alt="Image 2">
+                    <img src="{% static 'mainapp/img/banerPic3.png' %}" alt="Image 3">
+                    <img src="{% static 'mainapp/img/banerPic1.png' %}" alt="Image 1">
+                    <img src="{% static 'mainapp/img/banerPic2.png' %}" alt="Image 2">
+                    <img src="{% static 'mainapp/img/banerPic3.png' %}" alt="Image 3">
                 </div>
             </div>
-            <script>
-                let banner = document.querySelector('.banner');
-                let images = document.querySelectorAll('.banner img');
 
-                let currentPosition = 0;
-                let speed = 1; // Скорость прокрутки
-
-                function scrollImages() {
-                    currentPosition -= speed;
-                    if (currentPosition <= -310) {
-                        currentPosition = 0;
-                        banner.style.transition = 'none'; // Убираем переход для мгновенной смены позиции
-                    } else {
-                        banner.style.transition = 'transform 1s linear'; // Восстанавливаем переход
-                    }
-                    banner.style.transform = `translateX(${currentPosition}px)`;
-                }
-
-                setInterval(scrollImages, 50); // Изменение позиции каждые 50 миллисекунд
-            </script>
 
 
 
@@ -112,21 +99,25 @@
             </div>
         </section>
 
-        <h2 class="h2block4">Категории услуг</h2>
-        <section class="block4">
 
-            <div class="category-card">
-                <h2>Mobile Internet</h2>
-            </div>
-            <div class="category-card">
-                <h2>Wi-Fi</h2>
-            </div>
-            <div class="category-card">
-                <h2>Wi-Fi + TV</h2>
-            </div>
-        </section>
     </main>
 
+<footer>
+    <div class="footer-content">
+        <div class="footer-text">
+            <p>© 2024, «DriveCom»™, ПИ(б)4-22. Все права защищены.
+            Лицензии ГАС при ГКИТиС КР:
+            ООО «ПИ(б)4-22»: №16-0062-КР от 06.12.2016, №16-0063-КР от 06.12.2016, №14-1124-КР от 03.12.2014, №15-1448-КР от 01.10.2015, №15-1469-КР от 02.11.2015, №16-0088-КР от 27.12.2016, №18-0318-КР от 14.06.2018, №18-0294-КР от 06.04.2018, №18-0297-КР от 06.04.2018, №21-0470-КР от 17.06.2021.
+            ЗАО «ПРАКТИКА»: №16-0019-КР от 04.08.2016, №03-292-КР от 24.11.2003, №14-1103-КР от 30.10.2014, №14-1168-КР от 31.12.2014.
+            </p>
+            <p>Телеканалы, содержание и контент в рамках услуги GosTV предоставляется ОсОО «». В рамках услуги «RayanGosling!Кино» контент предоставляется онлайн-кинотеатром Манас посредством технических ресурсов ОсОО «ПИ(б)4-22» и ОсОО «АтайАлиртай». В рамках услуги «DRIVE» доступ к контенту предоставляется онлайн видеосервисом DRIVE.KG посредством технических ресурсов ОсОО «ПИ(б)4-22», ОсОО «ТимаCompany» и ООО «FlyanGolsing.com».</p>
+        </div>
+    </div>
+</footer>
 
 </body>
+
+
+
+
 </html>

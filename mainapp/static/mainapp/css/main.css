@@ -95,10 +95,9 @@ main {
 /* Block 1 styles */
 .block1 {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
-
 }
 
 .banner-container {
@@ -106,14 +105,28 @@ main {
     height: 350px;
     overflow: hidden;
     position: relative;
-    margin-left: 50px;
-    margin-right: 65px;
 }
 
 .banner {
     display: flex;
-    animation: scrollImages 10s linear infinite;
+    animation: scrollBanner 30s linear infinite;
 }
+
+.banner img {
+    width: 800px;
+    height: 350px;
+}
+
+@keyframes scrollBanner {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-5500px); /* Значение изменено */
+    }
+}
+
+
 
 .banner img {
     width:800px;
@@ -239,27 +252,28 @@ main {
     border-radius: 20px;
 }
 
-/* Block 4 styles */
-.block4 {
-    display: flex;
-    margin-bottom: 20px;
-    justify-content: center;
-}
-
-.h2block4 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.category-card {
-    text-align: center;
-    width: 200px;
+.footer {
+    background-color: #f5f5f5;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 0 10px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-text {
+    line-height: 1.6;
+    padding: 10px;
+}
+
+.footer-text p {
+    margin: 5px 0;
 }
 
 
