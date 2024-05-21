@@ -10,35 +10,114 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/">Logo</a>
+            <a href="/">
+                <img src="{% static 'mainapp/img/logo.png' %}" alt="Logo" width="40" height="40">
+            </a>
         </div>
-        <div class="header-text">
-            <h1>Welcome to Our Service</h1>
-        </div>
-        <div class="profile-button">
-            <li><a href="/profile/">Профиль</a></li>
-        </div>
+        <div class="buttons">
+            <button class="mobile_internet-button" onclick="redirectToCategory('mobile_internet')">МОБИЛЬНЫЙ ИНТЕРНЕТ</button>
+            <button class="WIFI-button" onclick="redirectToCategory('wifi')">WiFi</button>
+            <button class="WIFI+TV-button" onclick="redirectToCategory('wifi_tv')">WiFi+TV</button>
+    </div>
+    <div class="profile-button">
+        <button class="profile-button" onclick="window.location.href='/profile/'" >
+            <img src="{% static 'mainapp/img/icon-profile.png' %}" alt="Иконка профиля">
+            <span>Личный кабинет</span>
+        </button>
+    </div>
     </header>
+    <div class = "slogan">
+        Мы - СКОРОСТЬ! (кчау)
+    </div>
+
+        <script>
+    function redirectToCategory(category) {
+        var url;
+            // Определяем URL в зависимости от выбранной категории
+            if (category === 'mobile_internet') {
+                url = '{% url 'mobile_internet' %}';
+            } else if (category === 'wifi') {
+                url = '{% url 'wifi' %}';
+            } else if (category === 'wifi_tv') {
+                url = '{% url 'wifi_tv' %}';
+            }
+
+            // Перенаправляем на соответствующую страницу
+            window.location.href = url;
+        }
+    </script>
 
 <main>
     <!-- Карточка услуги -->
-    <section class="service-card">
-        <h2>{{ service.name }}</h2>
-        <p>{{ service.description }}</p>
-        <p>Цена: {{ service.price }} сом</p>
-        {% if service.category == 'mobile_internet' %}
-            <!-- Выводим код для активации услуги мобильного интернета -->
-            <p>Введите следующий код для активации услуги: XXXXXXX</p>
-        {% elif user.is_authenticated %}
-            <!-- Выводим кнопку для добавления заявки на услугу -->
-            <form action="{% url 'add_request' %}" method="post">
-                {% csrf_token %}
-                <input type="hidden" name="service_id" value="{{ service.id }}">
-                <button type="submit">Добавить в профиль</button>
-            </form>
-        {% endif %}
+    <h2>{{ service.name }}</h2>
+    <section class="service-details">
+
+        <div class="service-card">
+            <p class="desc-title">ОПИСАНИЕ</p>
+            <p class="service-description">{{ service.description | linebreaks }}</p>
+        </div>
+
+        <!-- ПОДКЛЮЧИТЬ/ЦЕНА -->
+        <div class="tarif-join">
+            <div class="tarif-price">
+                <p class="price-title">ЦЕНА</p>
+                <p class="price-value">{{ service.price }}</p>
+            </div>
+
+            <div class="tarif-button">
+                {% if service.category == 'mobile_internet' %}
+                    <!-- Выводим код для активации услуги мобильного интернета -->
+                <div class="code-act">
+                    <p>Код активации</p>
+                    <p class="CODE">*00{{service.id}}#</p>
+                </div>
+                {% elif user.is_authenticated %}
+                    <!-- Выводим кнопку для добавления заявки на услугу -->
+                    <form action="{% url 'add_request' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="service_id" value="{{ service.id }}">
+                        <button type="submit">Добавить в профиль</button>
+                    </form>
+                    <button id="showPopupButton" class="popup-button">Дать деньга</button>
+                {% endif %}
+            </div>
+        </div>
     </section>
+
+    <!-- Мини-окошечко -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            Отсканируйте QR Code
+            <span class="close">&times;</span>
+            <img src="{% static 'mainapp/img/QRTima.jpg' %}" alt="Картинка" class="popup-image">
+        </div>
+    </div>
+
+    <script>
+        // Получаем элементы
+        var popup = document.getElementById("popup");
+        var btn = document.getElementById("showPopupButton");
+        var span = document.getElementsByClassName("close")[0];
+
+        // При нажатии на кнопку показываем мини-окошечко
+        btn.onclick = function() {
+            popup.style.display = "block";
+        }
+
+        // При нажатии на <span> (x) закрываем мини-окошечко
+        span.onclick = function() {
+            popup.style.display = "none";
+        }
+
+        // При клике в любом месте за пределами мини-окошечка закрываем его
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        }
+    </script>
 </main>
+
 
 <footer>
     <div class="footer-content">
@@ -55,3 +134,4 @@
 
 </body>
 </html>
+

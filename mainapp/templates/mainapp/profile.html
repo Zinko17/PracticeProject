@@ -16,15 +16,32 @@
             </a>
         </div>
         <div class="buttons">
-            <button class="mobile_internet-button">МОБИЛЬНЫЙ ИНТЕРНЕТ</button>
-            <button class="WIFI-button">WiFi</button>
-            <button class="WIFI+TV-button">WiFi+TV</button>
+            <button class="mobile_internet-button" onclick="redirectToCategory('mobile_internet')">МОБИЛЬНЫЙ ИНТЕРНЕТ</button>
+            <button class="WIFI-button" onclick="redirectToCategory('wifi')">WiFi</button>
+            <button class="WIFI+TV-button" onclick="redirectToCategory('wifi_tv')">WiFi+TV</button>
     </div>
     <div class="profile-button">
         <button class="profile-button" onclick="window.location.href='{% url 'logout' %}?next=/profile/'">
             <span>Выход</span>
         </button>
     </div>
+
+        <script>
+    function redirectToCategory(category) {
+        var url;
+            // Определяем URL в зависимости от выбранной категории
+            if (category === 'mobile_internet') {
+                url = '{% url 'mobile_internet' %}';
+            } else if (category === 'wifi') {
+                url = '{% url 'wifi' %}';
+            } else if (category === 'wifi_tv') {
+                url = '{% url 'wifi_tv' %}';
+            }
+
+            // Перенаправляем на соответствующую страницу
+            window.location.href = url;
+        }
+    </script>
 
     </header>
     <div class = "slogan">

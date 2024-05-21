@@ -76,5 +76,14 @@ a.home-btn {
 .links {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
