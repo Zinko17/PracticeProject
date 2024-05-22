@@ -87,48 +87,55 @@ header {
 }
 
 
-/* Стили карточки профиля */
+/* Подключение Font Awesome для иконок */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
+/* Стили карточки профиля */
 .profile-card {
     margin: 20px auto;
     max-width: 600px;
-    height: 200px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0px 16px rgba(0, 0, 0, 0.25);
-
+    overflow: hidden; /* Добавлено для скрытия скругленных углов фона */
 }
 
-.hello-user{
+.hello-user {
     background-color: #16354D;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
-    padding: 10px;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
 
-.hello-user h1, h3{
-    color:#fff;
-    margin-left:10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.hello-user h1, .hello-user h3 {
+    color: #fff;
+    margin: 0 10px;
 }
 
 .profile-details {
-    padding-left: 20px;
-
+    padding: 20px;
 }
 
 .profile-details p {
     color: #717171;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 10px 0 5px 0;
+    display: flex;
+    align-items: center;
 }
-.profile-details span{
+
+.profile-details span {
     color: #0C151C;
     font-weight: bold;
-    margin-bottom: 30px;
+    display: block; /* Добавлено для правильного отображения отступов */
+    margin-bottom: 10px;
+}
+
+.profile-details i {
+    color: #16354D;
+    margin-right: 8px;
 }
 
 
@@ -234,31 +241,39 @@ html, body {
     padding: 0;
 }
 
-.footer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    color: #333;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* Footer */
+footer {
+    padding: 50px;
+    margin-top: 200px;
+    margin-left: 100px;
 }
 
 .footer-content {
     max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
-.footer-text {
+.footer-text, .contact-info {
     line-height: 1.6;
     padding: 10px;
+    font-size: 14px;
 }
 
-.footer-text p {
+.footer-text p, .contact-info p {
     margin: 5px 0;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info a {
+    color: #000;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
 }
 .no-requests {
     margin-top: 20px; /* Добавляем отступ сверху для разделения от блока заявок на услуги */

@@ -76,7 +76,7 @@
                     <form action="{% url 'add_request' %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="service_id" value="{{ service.id }}">
-                        <button type="submit">Добавить в профиль</button>
+                        <button type="submit">Оставить заявку</button>
                     </form>
                     <button id="showPopupButton" class="popup-button">Дать деньга</button>
                 {% endif %}
@@ -119,6 +119,9 @@
 </main>
 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
 <footer>
     <div class="footer-content">
         <div class="footer-text">
@@ -129,8 +132,14 @@
             </p>
             <p>Телеканалы, содержание и контент в рамках услуги GosTV предоставляется ОсОО «». В рамках услуги «RayanGosling!Кино» контент предоставляется онлайн-кинотеатром Манас посредством технических ресурсов ОсОО «ПИ(б)4-22» и ОсОО «АтайАлиртай». В рамках услуги «DRIVE» доступ к контенту предоставляется онлайн видеосервисом DRIVE.KG посредством технических ресурсов ОсОО «ПИ(б)4-22», ОсОО «ТимаCompany» и ООО «FlyanGolsing.com».</p>
         </div>
+        <div class="contact-info">
+            <p>Для связи:</p>
+            <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/+996552527370" target="_blank">+996552527370</a></p>
+            <p><i class="fab fa-telegram-plane"></i> Telegram: <a href="https://t.me/whammbamm" target="_blank">Тима Гослинг</a></p>
+        </div>
     </div>
 </footer>
+
 
 </body>
 </html>

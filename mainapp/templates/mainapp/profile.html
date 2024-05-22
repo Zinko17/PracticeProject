@@ -48,28 +48,31 @@
         Мы - СКОРОСТЬ! (кчау)
     </div>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
 <main>
     <!-- Карточка профиля -->
     <section class="profile-card">
-        <div class="hello-user">
-            <h3>Здравствуйте,  </h3>
-            <h1 >{{ userprofile.user.username }}</h1>
-        </div>
-        <div class="profile-details">
-            {% if userprofile.user.email %}
-                <p>Email</p>
-                <span>{{ userprofile.user.email }}</span>
-            {% endif %}
-            {% if userprofile.phone_number %}
-                <p>Номер телефона </p>
-                <span>{{ userprofile.phone_number }}</span>
-            {% endif %}
-            {% if userprofile.address %}
-                <p>Адрес </p>
-                <span>{{ userprofile.address }}</span>
-            {% endif %}
-        </div>
-    </section>
+    <div class="hello-user">
+        <h3>Здравствуйте,</h3>
+        <h1>{{ userprofile.user.username }}</h1>
+    </div>
+    <div class="profile-details">
+        {% if userprofile.user.email %}
+            <p><i class="fas fa-envelope"></i> Email</p>
+            <span>{{ userprofile.user.email }}</span>
+        {% endif %}
+        {% if userprofile.phone_number %}
+            <p><i class="fas fa-phone"></i> Номер телефона </p>
+            <span>{{ userprofile.phone_number }}</span>
+        {% endif %}
+        {% if userprofile.address %}
+            <p><i class="fas fa-home"></i> Адрес </p>
+            <span>{{ userprofile.address }}</span>
+        {% endif %}
+    </div>
+</section>
 
     <!-- Заявки на услуги -->
 <section class="service-requests">
@@ -99,6 +102,9 @@
 </main>
 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
 <footer>
     <div class="footer-content">
         <div class="footer-text">
@@ -108,6 +114,11 @@
             ЗАО «ПРАКТИКА»: №16-0019-КР от 04.08.2016, №03-292-КР от 24.11.2003, №14-1103-КР от 30.10.2014, №14-1168-КР от 31.12.2014.
             </p>
             <p>Телеканалы, содержание и контент в рамках услуги GosTV предоставляется ОсОО «». В рамках услуги «RayanGosling!Кино» контент предоставляется онлайн-кинотеатром Манас посредством технических ресурсов ОсОО «ПИ(б)4-22» и ОсОО «АтайАлиртай». В рамках услуги «DRIVE» доступ к контенту предоставляется онлайн видеосервисом DRIVE.KG посредством технических ресурсов ОсОО «ПИ(б)4-22», ОсОО «ТимаCompany» и ООО «FlyanGolsing.com».</p>
+        </div>
+        <div class="contact-info">
+            <p>Для связи:</p>
+            <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/+996552527370" target="_blank">+996552527370</a></p>
+            <p><i class="fab fa-telegram-plane"></i> Telegram: <a href="https://t.me/whammbamm" target="_blank">Тима Гослинг</a></p>
         </div>
     </div>
 </footer>

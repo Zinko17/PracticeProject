@@ -71,15 +71,15 @@ header {
     margin-right: 5px;
 }
 
-.slogan {
+.slogan{
     width: auto;
-    height: 39px;
+    height: 39;
     background-color: #6B99C3;
     color: #FFFFFF;
     text-align: center;
-    padding: 10px;
+    padding: 10;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
+    margin-bottom: 50;
 }
 
 /* Service Details */
@@ -242,12 +242,26 @@ footer {
     text-align: center;
 }
 
-.footer-text {
+.footer-text, .contact-info {
     line-height: 1.6;
     padding: 10px;
     font-size: 14px;
 }
 
-.footer-text p {
+.footer-text p, .contact-info p {
     margin: 5px 0;
 }
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info a {
+    color: #000;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
