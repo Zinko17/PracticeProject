@@ -205,14 +205,16 @@ main {
 
 /* Footer */
 footer {
-    padding: 50px;
+    background-color: #16354d;
+    color: white;
+    padding: 50px 20px;
     margin-top: 200px;
-    margin-left: 100px;
+    text-align: center;
 }
 
 .footer-content {
     max-width: 1200px;
-    text-align: center;
+    margin: 0 auto;
 }
 
 .footer-text, .contact-info {
@@ -230,10 +232,14 @@ footer {
 }
 
 .contact-info a {
-    color: #000;
+    color: #6B99C3;
     text-decoration: none;
 }
 
 .contact-info a:hover {
     text-decoration: underline;
+}
+
+.contact-info i {
+    margin-right: 10px;
 }

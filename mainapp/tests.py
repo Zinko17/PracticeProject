@@ -77,14 +77,11 @@ class AddRequestViewTestCase(TestCase):
             description='Test Description',
             price=100
         )
-
     def test_add_request_view(self):
         # Аутентификация пользователя
         self.client.login(username='testuser', password='testpassword')
-
         # Отправляем POST-запрос на страницу добавления заявки
         response = self.client.post(reverse('add_request'), {'service_id': self.service.id})
-
         # Проверяем, что заявка была успешно добавлена и происходит перенаправление на страницу деталей услуги
         self.assertEqual(response.status_code, 302)  # Перенаправление
         self.assertTrue(self.user_profile.services.filter(id=self.service.id).exists())  # Проверка добавления заявки
