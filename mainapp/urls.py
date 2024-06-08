@@ -15,5 +15,6 @@ urlpatterns = [
     path('mobile_internet/', views.mobile_internet, name='mobile_internet'),
     path('wifi/', views.wifi, name='wifi'),
     path('wifi_tv/', views.wifi_tv, name='wifi_tv'),
+    path('remove_service/<int:service_id>/', views.remove_service, name='remove_service'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

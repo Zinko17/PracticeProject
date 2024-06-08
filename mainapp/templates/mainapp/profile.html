@@ -74,21 +74,27 @@
     </div>
 </section>
 
-    <!-- Заявки на услуги -->
+<!-- profile.html -->
 <section class="service-requests">
     <h2 class="h2service">Заявки на услуги</h2>
-    {% if service_requests %}
+    {% if service_requests.exists %}
         <div class="request-cards">
-            {% for request in service_requests %}
+            {% for service in service_requests %}
             <div class="request-card">
                 <div class="request-name">
-                    <p>{{ request.name }}</p>
+                    <p>{{ service.name }}</p>
                 </div>
                 <div class="request-description">
-                    <p>{{ request.description |linebreaks }}</p>
+                    <p>{{ service.description | linebreaks }}</p>
                 </div>
                 <div class="price">
-                    <p>Цена: {{ request.price }} сом</p>
+                    <p>Цена: {{ service.price }} сом</p>
+                </div>
+                <div class="request-actions">
+                    <form method="post" action="{% url 'remove_service' service.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="details-button">Отменить заявку</button>
+                    </form>
                 </div>
             </div>
             {% endfor %}
@@ -99,6 +105,7 @@
         </div>
     {% endif %}
 </section>
+
 </main>
 
 

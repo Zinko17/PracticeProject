@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Service, UserProfile
 from .forms import UserProfileForm, UserForm, RegistrationForm
@@ -8,6 +9,16 @@ from .forms import UserProfileForm, UserForm, RegistrationForm
 def main(request):
     services = Service.objects.all()
     return render(request, 'mainapp/main.html', {'services': services})
+
+@login_required
+def remove_service(request, service_id):
+    service = get_object_or_404(Service, pk=service_id)
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    if request.method == 'POST':
+        user_profile.services.remove(service)
+        return redirect('profile')  # Укажите URL вашего профиля
+    return HttpResponseForbidden("Вы не можете удалить эту заявку.")
+
 
 @login_required
 def profile_view(request):

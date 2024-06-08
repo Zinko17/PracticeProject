@@ -231,6 +231,25 @@ header {
     text-align: center; /* Добавляем центрирование текста */
 }
 
+.details-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #FF4C4C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%
+}
+
+.details-button:hover {
+    background-color: #D32F2F; /* Темнотинко-синий при наведении */
+}
+
 .service-requests li:last-child {
     border-bottom: none;
 }
